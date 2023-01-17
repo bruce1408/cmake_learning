@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 11)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-# 定义一个开关，布尔值，是否输出版本好，然后是帮助信息，最后是on或者off开关
+# 定义一个开关, 布尔值, 是否输出版本好, 然后是帮助信息, 最后是on或者off开关
 option(VERSION_ENABLE "output version" on)
 
 option(DATE_ENABLE "output date" on)
