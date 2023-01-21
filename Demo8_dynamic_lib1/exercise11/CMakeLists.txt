@@ -10,6 +10,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 option(VERSION_ENABLE "output version" on)
 
 option(DATE_ENABLE "output date" on)
+
 # 如果开关打开就设置日期
 if(DATE_ENABLE)
 	set(DATE "2017-05-03")
