@@ -3,9 +3,10 @@
 #include <config.h>
 
 #ifdef USE_MYMATH
-  #include <MathFunctions.h>
+//   #include <MathFunctions.h>
+    #include <math/MathFunctions.h>
 #else
-  #include <math.h>
+    #include <math.h>
 #endif
 
 

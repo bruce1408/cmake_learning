@@ -17,14 +17,36 @@ configure_file (
   )
   
 message("the project source dir is: ${PROJECT_SOURCE_DIR}")
+
+# ============== 第一种写法，配合main.cc也要改一下，加上一个math/MathFunctions ====
+# 是否加入 MathFunctions 库
+if (USE_MYMATH)
+# 这个可以不用写
+    # include_directories ("${PROJECT_SOURCE_DIR}/math")
+    message(STATUS "the use mymath is true")
+    add_subdirectory (math)
+    set (EXTRA_LIBS ${EXTRA_LIBS} MathFunctions)
+endif (USE_MYMATH)
+
+message(STATUS "=====extra_libs: " ${EXTRA_LIBS})
+# 并将名称保存到 DIR_SRCS 变量
+aux_source_directory(. DIR_SRCS)
+
+# 指定生成目标
+add_executable (Demo ${DIR_SRCS})
+target_link_libraries (Demo  ${EXTRA_LIBS})
+
+
+# ============== 第二种写法，main.cc不用改 ==============
 # 是否加入 MathFunctions 库
 if (USE_MYMATH)
   include_directories ("${PROJECT_SOURCE_DIR}/math")
-  add_subdirectory (math)
-  set (EXTRA_LIBS ${EXTRA_LIBS} MathFunctions)
+    message(STATUS "the use mymath is true")
+    add_subdirectory (math)
+    set (EXTRA_LIBS ${EXTRA_LIBS} MathFunctions)
 endif (USE_MYMATH)
 
-# 查找当前目录下的所有源文件
+message(STATUS "=====extra_libs: " ${EXTRA_LIBS})
 # 并将名称保存到 DIR_SRCS 变量
 aux_source_directory(. DIR_SRCS)
 
