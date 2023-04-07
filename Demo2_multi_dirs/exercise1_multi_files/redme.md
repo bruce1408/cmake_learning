@@ -1,0 +1,4 @@
+多文件使用cmake编译，使用两个关键字
+add_executable
+
+aux_source_directory

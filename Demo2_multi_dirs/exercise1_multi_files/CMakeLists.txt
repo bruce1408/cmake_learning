@@ -8,9 +8,11 @@ project (Demo2 LANGUAGES CXX)
 # 并将名称保存到 DIR_SRCS 变量
 aux_source_directory(. DIR_SRCS)
 
-# # 指定生成目标
+# 保存的就是mathfunctions.cc 和 main.cc,不会包含.h的头文件
+message(STATUS "the dir srcs is: " ${DIR_SRCS} )
+
+# 指定生成目标
 add_executable(Demo ${DIR_SRCS})
-message("dir srcs is "${DIR_SRCS})
 
 
 # # 复杂的写法

@@ -1,0 +1,4 @@
+cmake 在编译的时候，把一些可执行文件保存到指定的目录，比如bin文件里面
+
+简单的一个例子，使用cmake编译，然后主要的 关键字就是 aux_source_directory
+add_executable 加入可执行文件
