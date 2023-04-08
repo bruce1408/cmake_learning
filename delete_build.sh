@@ -2,25 +2,37 @@
 
 # 输出所有目录
 files=`ls -d */`
-echo ${files}
+# echo ${files}
 
 build="build"
 
+include_dir="exercise"
 # 遍历所有目录
 for dir in ${files[@]}
 do
-    # 拼接build目录
-    build_path="./${dir}/${build}"
+    exer_path=`ls -d ${dir}*/`
+  
+    for eachline in ${exer_path[@]}
+    do
+        # 当前目录使用正则表达式匹配 grep 后面就加上一个E即可
+        if echo "$eachline" | grep -Eq $include_dir; then
+  
+            # 拼接build目录且是否存在
+            build_path="${eachline}/${build}"
+            # echo $build_path
 
-    # 存在build目录
-    if [ -d "$build_path" ];then
+            # 如果存在那么再判断该目录下的文件
+            if [ -d "$build_path" ];then
 
-        # 且目录下面有文件就删除所有文件
-        if [ "$(ls -A $build_path)" ]; then
-            rm -r "$build_path/"*
+                # 有文件就删除所有文件
+                if [ "$(ls -A $build_path)" ]; then
+                    rm -r "$build_path/"*
+                fi
+            # 没有build目录就创建build 
+            else
+                mkdir -p "$build_path"
+            fi
+
         fi
-    # 否则创建build目录 
-    else
-        mkdir -p "$build_path"
-    fi
+    done
 done
