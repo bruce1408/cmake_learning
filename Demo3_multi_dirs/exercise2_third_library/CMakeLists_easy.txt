@@ -7,6 +7,7 @@ project (Demo3)
 
 include_directories(math)
 
+# 注意这里是把math加进去了 而不是主工程下面的源文件
 aux_source_directory(math DIR_SRCS)
 
 message(STATUS "source code is: " ${DIR_SRCS})

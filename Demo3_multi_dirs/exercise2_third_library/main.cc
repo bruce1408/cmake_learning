@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include "math/MathFunctions.h"
 
+// 只能是简单的cmake写法不出错 要是使用链接库的话 这里就要加上math目录才行
+// #include "MathFunctions.h"
 int main(int argc, char *argv[])
 {
     if (argc < 3){
