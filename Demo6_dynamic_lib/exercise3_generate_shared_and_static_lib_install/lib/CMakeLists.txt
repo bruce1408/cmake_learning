@@ -13,5 +13,7 @@ set_target_properties(hello_dynamic PROPERTIES CLEAN_DIRECT_OUTPUT 1)
 install(FILES hello.h DESTINATION include/hello)
 
 # 先安装动态库，然后安装静态库
-install(TARGETS hello_dynamic hello_static LIBRARY DESTINATION /Users/bruce/CppProjects/demo/lib ARCHIVE DESTINATION /Users/bruce/CppProjects/demo/lib)
+install(TARGETS hello_dynamic hello_static 
+    LIBRARY DESTINATION lib 
+    ARCHIVE DESTINATION lib)
 

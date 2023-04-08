@@ -1,1 +1,5 @@
 同时生成动态库和静态库
+
+这里，cmake 在构建新的target的时候，不会清理掉使用这个名字的其他库
+所以不需要 get_target_properties 这个命令；
+一般也不需要 SET_TARGET_PROPERTIES(hello_static PROPERTIES CLEAN_DIRECT_OUTPUT 1)这个命令
