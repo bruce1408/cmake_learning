@@ -1,2 +1,1 @@
-使用 生成动态库和静态库
-
+使用 find_package 来调用生成的库文件，这里要注意自己建立一个cmake目录，cmake目录里面的文件FindHELLO.cmake 必须保持大小写关系
