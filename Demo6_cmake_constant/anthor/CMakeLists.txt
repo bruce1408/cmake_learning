@@ -17,3 +17,7 @@ AUX_SOURCE_DIRECTORY(. SRC_LIST)
 FOREACH(VAR ${SRC_LIST}) 
     MESSAGE(${VAR}) 
 ENDFOREACH(VAR)
+
+# ./src1.c
+# ./src2.c
+# ./src3.c
