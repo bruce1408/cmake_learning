@@ -1,5 +1,12 @@
-ADD_EXECUTABLE(curltest main.c)
+# 方法 1 使用include_directories 
+# INCLUDE_DIRECTORIES(/opt/local/include)
 
+# ADD_EXECUTABLE(curltest main.c)
+
+# TARGET_LINK_LIBRARIES(curltest /opt/local/lib/libcurl.dylib)
+
+
+# 方法 2 使用find_package 指令
 FIND_PACKAGE(CURL)
 IF(CURL_FOUND)
     message(STATUS "curl found" ${curl_found})
