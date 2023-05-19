@@ -1,5 +1,7 @@
 # 用来搜索头文件的指令
-include_directories(/Users/bruce/CppProjects/cmake_learning/demo/include/hello)
+
+message(status "${CMAKE_BINARY_DIR}/../../../demo/include/hello")
+include_directories("${CMAKE_BINARY_DIR}/../../../demo/include/hello")
 
 add_executable(hello main.cpp)
 
@@ -7,4 +9,4 @@ add_executable(hello main.cpp)
 # link_libraries(/Users/bruce/CppProjects/cmake_learning/demo/lib)
 
 # 目标文件和库文件进行链接
-TARGET_LINK_LIBRARIES(hello /Users/bruce/CppProjects/cmake_learning/demo/lib/libhello.dylib)
+TARGET_LINK_LIBRARIES(hello "${CMAKE_BINARY_DIR}/../../../demo/lib/libhello.so")
