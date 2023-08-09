@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
-cd /Users/bruce/CppProjects/CPlusPlusThings/extensions/cmake_learning/Demo3_multi_dirs_useage/exercise2_third_library
+
+workdir=$(cd $(dirname $0); pwd)
+
+
+cd ${workdir}
 
 rm -rf build/
 

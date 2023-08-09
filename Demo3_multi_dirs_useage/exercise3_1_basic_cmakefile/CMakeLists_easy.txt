@@ -1,0 +1,15 @@
+# 这种写法最简单了
+# CMake 最低版本号要求
+cmake_minimum_required (VERSION 2.8)
+
+# 项目信息
+project (Demo3)
+
+include_directories(math)
+
+# 注意这里是把math加进去了 而不是主工程下面的源文件
+aux_source_directory(math DIR_SRCS)
+
+message(STATUS "source code is: " ${DIR_SRCS})
+
+add_executable(main main.cc ${DIR_SRCS})

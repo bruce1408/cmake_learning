@@ -1,5 +1,8 @@
+cmake_minimum_required(VERSION 3.23)
+
 PROJECT(CONSTANT)
 
+message(STATUS "=====================" ${CMAKE_CURRENT_SOURCE_DIR})
 # /Users/bruce/CppProjects/cmake_learning/Demo6_cmake_constant/build
 MESSAGE(STATUS "CMAKE_BINARY_DIR=" ${CMAKE_BINARY_DIR})
 

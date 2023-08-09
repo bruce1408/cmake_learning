@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
-cd /Users/bruce/CppProjects/CPlusPlusThings/extensions/cmake_learning/Demo3_multi_dirs_useage/exercise2_third_library
+
+workdir=$(cd $(dirname $0); pwd)
+
+
+cd ${workdir}
 
 rm -rf build/
 
@@ -16,4 +20,4 @@ echo "========== exec the next step: make"
 make
 
 echo "Run Demo"
-./Demo 3 2
+./Demo 3 3
