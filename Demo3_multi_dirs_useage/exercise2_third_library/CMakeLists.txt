@@ -4,9 +4,10 @@ cmake_minimum_required (VERSION 2.8)
 # 项目信息
 project (Demo3)
 
+# 添加所有的源文件
 aux_source_directory(. DIR_SRCS)
 
-# 添加 math 子目录
+# 添加 math 头文件
 add_subdirectory(math)
 
 # 指定生成目标
