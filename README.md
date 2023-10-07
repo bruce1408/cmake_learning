@@ -2,9 +2,9 @@ CMake 入门实战
 =====
 
 > 本仓库是 [CMake 入门实战](https://hahack.com/codes/cmake) 的源代码。
-> 
+>
 > 为了方便 github pages 无法正常阅读的朋友，下面也附带上正文。
-> 
+>
 > 但为了您更好的阅读体验，不妨前往原博客阅读：<https://hahack.com/codes/cmake> 。
 
 ## 什么是 CMake ##
@@ -137,10 +137,10 @@ Linking C executable Demo
 ./Demo2
     |
     +--- main.cc
-	|
-	+--- MathFunctions.cc
-	|
-	+--- MathFunctions.h
+ |
+ +--- MathFunctions.cc
+ |
+ +--- MathFunctions.h
 ```
 
 这个时候，CMakeLists.txt 可以改成如下的形式：
@@ -185,18 +185,18 @@ add_executable(Demo ${DIR_SRCS})
 
 > 本小节对应的源代码所在目录：[Demo3](https://github.com/wzpan/cmake-demo/tree/master/Demo3)。
 
-现在进一步将 MathFunctions.h 和 MathFunctions.cc 文件移动到 math 目录下。 
+现在进一步将 MathFunctions.h 和 MathFunctions.cc 文件移动到 math 目录下。
 
 ``` plain
 ./Demo3
     |
     +--- main.cc
-	|
-	+--- math/
-	      |
-	      +--- MathFunctions.cc
-	      |
-	      +--- MathFunctions.h
+ |
+ +--- math/
+       |
+       +--- MathFunctions.cc
+       |
+       +--- MathFunctions.h
 ```
 
 对于这种情况，需要分别在项目根目录 Demo3 和 math 目录里各编写一个 CMakeLists.txt 文件。为了方便，我们可以先将 math 目录里的文件编译成静态库再由 main 函数调用。
@@ -268,7 +268,7 @@ configure_file (
 
 # 是否使用自己的 MathFunctions 库
 option (USE_MYMATH
-	   "Use provided math implementation" ON)
+    "Use provided math implementation" ON)
 
 # 是否加入 MathFunctions 库
 if (USE_MYMATH)
@@ -501,9 +501,9 @@ do_test (10 5 "is 100000")
 do_test (2 10 "is 1024")
 ```
 
-关于 CTest 的更详细的用法可以通过 `man 1 ctest` 参考 CTest 的文档。 
+关于 CTest 的更详细的用法可以通过 `man 1 ctest` 参考 CTest 的文档。
 
-## 支持 gdb  ##
+## 支持 gdb ##
 
 让 CMake 支持 gdb 的设置也很容易，只需要指定 `Debug` 模式下开启 `-g` 选项：
 
@@ -591,7 +591,7 @@ set (Demo_VERSION_MINOR 0)
 int main(int argc, char *argv[])
 {
     if (argc < 3){
-	    // print version info
+     // print version info
         printf("%s Version %d.%d\n",
             argv[0],
             Demo_VERSION_MAJOR,
@@ -737,7 +737,7 @@ Now we use our own Math library.
 5 ^ 2 is 25
 ```
 
-关于 CPack 的更详细的用法可以通过 `man 1 cpack` 参考 CPack 的文档。 
+关于 CPack 的更详细的用法可以通过 `man 1 cpack` 参考 CPack 的文档。
 
 ## 将其他平台的项目迁移到 CMake ##
 
@@ -747,7 +747,7 @@ CMake 可以很轻松地构建出在适合各个平台执行的工程环境。�
 
 * [am2cmake](https://projects.kde.org/projects/kde/kdesdk/kde-dev-scripts/repository/revisions/master/changes/cmake-utils/scripts/am2cmake) 可以将 autotools 系的项目转换到 CMake，这个工具的一个成功案例是 KDE 。
 * [Alternative Automake2CMake](http://emanuelgreisen.dk/stuff/kdevelop_am2cmake.php.tgz) 可以转换使用 automake 的 KDevelop 工程项目。
-* [Converting autoconf tests](http://www.cmake.org/Wiki/GccXmlAutoConfHints) 
+* [Converting autoconf tests](http://www.cmake.org/Wiki/GccXmlAutoConfHints)
 
 #### qmake ####
 
@@ -773,14 +773,14 @@ CMake 可以很轻松地构建出在适合各个平台执行的工程环境。�
 5. [FAQ](http://www.cmake.org/Wiki/CMake_FAQ)
 6. [bug tracker](http://www.cmake.org/Bug)
 7. 邮件列表：
-    - [cmake on Gmane](http://dir.gmane.org/gmane.comp.programming.tools.cmake.user)
-    - [http://www.mail-archive.com/cmake@cmake.org/](http://www.mail-archive.com/cmake@cmake.org/)
-    - [http://marc.info/?l=cmake](http://www.mail-archive.com/cmake@cmake.org/)
+    * [cmake on Gmane](http://dir.gmane.org/gmane.comp.programming.tools.cmake.user)
+    * [http://www.mail-archive.com/cmake@cmake.org/](http://www.mail-archive.com/cmake@cmake.org/)
+    * [http://marc.info/?l=cmake](http://www.mail-archive.com/cmake@cmake.org/)
 8. 其他推荐文章
-    - [在 linux 下使用 CMake 构建应用程序](http://www.ibm.com/developerworks/cn/linux/l-cn-cmake/)
-    - [cmake的一些小经验](http://www.cppblog.com/skyscribe/archive/2009/12/14/103208.aspx)
-    - [Packaging Software with CPack](http://www.kitware.com/media/archive/kitware_quarterly0107.pdf)
-    - [视频教程: 《Getting Started with CMake》](http://www.youtube.com/watch?v=CLvZTyji_Uw)
+    * [在 linux 下使用 CMake 构建应用程序](http://www.ibm.com/developerworks/cn/linux/l-cn-cmake/)
+    * [cmake的一些小经验](http://www.cppblog.com/skyscribe/archive/2009/12/14/103208.aspx)
+    * [Packaging Software with CPack](http://www.kitware.com/media/archive/kitware_quarterly0107.pdf)
+    * [视频教程: 《Getting Started with CMake》](http://www.youtube.com/watch?v=CLvZTyji_Uw)
 
 ## 类似工具 ##
 
