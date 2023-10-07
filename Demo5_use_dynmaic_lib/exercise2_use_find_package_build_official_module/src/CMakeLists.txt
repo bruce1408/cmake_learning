@@ -5,7 +5,6 @@
 
 # TARGET_LINK_LIBRARIES(curltest /opt/local/lib/libcurl.dylib)
 
-
 # 方法 2 使用find_package 指令
 FIND_PACKAGE(CURL)
 IF(CURL_FOUND)
