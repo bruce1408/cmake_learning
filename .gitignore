@@ -5,3 +5,5 @@ build/
 *.dylib
 *.out
 *.o
+*.bin
+*.log
