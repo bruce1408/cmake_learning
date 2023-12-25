@@ -19,7 +19,9 @@ double power(double base, int exponent)
     for(i = 1; i < exponent; ++i){
         result = result * base;
     }
+    
     utils::print_log(result);
+
     return result;
 }
 
