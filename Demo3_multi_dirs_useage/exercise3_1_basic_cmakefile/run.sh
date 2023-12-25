@@ -1,22 +1,34 @@
 #!/usr/bin/env bash
 
+info() {
+    local message=$1
+    local progress=$2
+    local color='\033[1;34m'
+    echo -e "$color$message\033[0m"
+}
+
 workdir=$(cd $(dirname $0); pwd)
 
 cd ${workdir}
 
+cd ./build
+
+make clean
+
+cd ..
+
+
 rm -rf build/
 
-echo "========== create build dir..."
+info "========== create build dir..."
 mkdir build
 
-echo "========== build dir is generate done"
 cd build/
 
-echo "========== begin to exec cmake"
+info "========== begin to exec cmake"
 cmake ../
 
-echo "========== exec the next step: make"
 make
 
 echo "Run Demo"
-./Demo 3 1
+./Demo 3 2
