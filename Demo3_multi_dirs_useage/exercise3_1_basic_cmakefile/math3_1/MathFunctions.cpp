@@ -6,8 +6,10 @@
  * @return base raised to the power exponent.
  */
 
+#include "utils.h"
+// #include "MathFunctions.h"
 
-double power(double base, int exponent)
+double power_self(double base, int exponent)
 {
     int result = base;
     int i;

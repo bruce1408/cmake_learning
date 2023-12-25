@@ -1,8 +1,11 @@
+// utils.h
+#ifndef UTILS_H
+#define UTILS_H
+
 #include <iostream>
 
-namespace utils{
-
-    void print_log(int result){
-        std::cout<<result<<std::endl;
-    }
+namespace utils {
+    void print_log(int result); // 只是声明
 }
+
+#endif // UTILS_H
