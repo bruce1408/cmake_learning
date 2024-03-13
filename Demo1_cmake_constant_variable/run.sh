@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
-workdir=$(cd $(dirname $0); pwd)
+workdir=$(cd "$(dirname "$0")" || exit; pwd)
 
-
-cd ${workdir}
+cd "${workdir}" || exit
 
 rm -rf build/
 
@@ -11,7 +10,7 @@ echo "========== create build dir..."
 mkdir build
 
 echo "========== build dir is generate done"
-cd build/
+cd build/ || exit
 
 echo "========== begin to exec cmake"
 cmake ../
